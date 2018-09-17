@@ -1,0 +1,27 @@
+{
+  "name": "stylesnames",
+  "version": "1.0.0",
+  "description": "Util to conditionally apply Stylesheets for React and React-Native.",
+  "main": "dist/index.umd.js",
+  "author": "Matthias Giger",
+  "license": "MIT",
+  "repository": "naminho/stylesnames",
+  "scripts": {
+    "build": "microbundle",
+    "test": "jest"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "stylesnames",
+    "styles",
+    "classnames",
+    "react",
+    "react-native"
+  ],
+  "devDependencies": {
+    "jest": "^23.6.0",
+    "microbundle": "^0.6.0"
+  }
+}
