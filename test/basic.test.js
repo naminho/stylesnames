@@ -2,7 +2,7 @@ const stylesnames = require('./..')
 const styles = require('./fixtures/styles')
 
 test('Always adds styles for strings', () => {
-  const boundStylesNames = stylesnames.bind(styles)
+  const boundStylesNames = stylesnames.default.bind(styles)
   const inputStyle = boundStylesNames('input')
   const buttonStyle = boundStylesNames('button')
   const bothStyles = boundStylesNames('input', 'button')
@@ -19,16 +19,16 @@ test('Always adds styles for strings', () => {
 })
 
 test('Conditionally applies styles', () => {
-  const boundStylesNames = stylesnames.bind(styles)
+  const boundStylesNames = stylesnames.default.bind(styles)
   const conditionalStyleTrue = boundStylesNames({
-    disabled: true
+    disabled: true,
   })
   const conditionalStyleFalse = boundStylesNames({
-    disabled: false
+    disabled: false,
   })
   const severalConditionalStyles = boundStylesNames({
     disabled: true,
-    button: true
+    button: true,
   })
 
   expect(conditionalStyleTrue[0].opacity).toEqual(0.5)

@@ -1,14 +1,25 @@
 {
   "name": "stylesnames",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Util to conditionally apply Stylesheets for React and React-Native.",
-  "main": "dist/index.umd.js",
+  "main": "dist/index.js",
+  "source": "index.js",
   "author": "Matthias Giger",
   "license": "MIT",
-  "repository": "github:naminho/stylesnames",
+  "repository": "github:tobua/stylesnames",
   "scripts": {
-    "build": "microbundle",
-    "test": "jest"
+    "watch": "padua watch",
+    "build": "padua build",
+    "test": "padua test",
+    "release": "padua release",
+    "update": "padua update"
+  },
+  "prettier": "padua/configuration/.prettierrc.json",
+  "eslintConfig": {
+    "extends": "./node_modules/padua/configuration/eslint.cjs"
+  },
+  "devDependencies": {
+    "padua": "0.0.1"
   },
   "files": [
     "dist"
@@ -19,13 +30,5 @@
     "classnames",
     "react",
     "react-native"
-  ],
-  "devDependencies": {
-    "jest": "^26.1.0",
-    "microbundle": "^0.12.3"
-  },
-  "prettier": {
-    "semi": false,
-    "singleQuote": true
-  }
+  ]
 }

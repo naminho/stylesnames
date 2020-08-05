@@ -1,11 +1,11 @@
 module.exports = {
   input: {
-    backgroundColor: 'red'
+    backgroundColor: 'red',
   },
   button: {
-    color: 'blue'
+    color: 'blue',
   },
   disabled: {
-    opacity: 0.5
-  }
+    opacity: 0.5,
+  },
 }
