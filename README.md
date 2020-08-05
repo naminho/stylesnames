@@ -1,7 +1,7 @@
 # stylesnames
 
 style**s**names conditionally applies style objects for react and react-native
-similar to how classes can be combinded in react with  [classnames](https://github.com/JedWatson/classnames).
+similar to how classes can be combinded in react with [classnames](https://github.com/JedWatson/classnames).
 
 ## Installation
 
@@ -11,7 +11,7 @@ npm i stylesnames
 
 ## Usage
 
-```
+```js
 import stylesnames from 'stylesnames'
 
 const styles = stylesnames.bind({
@@ -26,7 +26,7 @@ const result = styles(
   },
   {
     highlight: true,
-    focus: value === 5
+    focus: value === 5,
   }
 )
 
@@ -37,28 +37,24 @@ const result = styles(
 
 ### React
 
-```
+```jsx
 import React, { Component } from 'react'
 import stylesnames from 'stylesnames'
 
 const styles = stylesnames.bind({
   button: {
-    backgroundColor: 'red'
+    backgroundColor: 'red',
   },
   disabled: {
-    opacity: 0.5
-  }
+    opacity: 0.5,
+  },
 })
 
 export default class FakeButton extends Component {
   render() {
     const { disabled, label } = this.props
 
-    return (
-      <div style={styles(button, { disabled })}>
-        {label}
-      </div>
-    )
+    return <div style={styles(button, { disabled })}>{label}</div>
   }
 }
 ```
@@ -80,19 +76,21 @@ opacity: 0.5;
 
 ### React Native
 
-```
+```jsx
 import React, { Component } from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import stylesnames from 'stylesnames'
 
-const styles = stylesnames.bind(StyleSheet.create({
-  button: {
-    backgroundColor: 'red'
-  },
-  disabled: {
-    opacity: 0.5
-  }
-}))
+const styles = stylesnames.bind(
+  StyleSheet.create({
+    button: {
+      backgroundColor: 'red',
+    },
+    disabled: {
+      opacity: 0.5,
+    },
+  })
+)
 
 export default class FakeButton extends Component {
   render() {
@@ -100,9 +98,7 @@ export default class FakeButton extends Component {
 
     return (
       <View style={styles('button', { disabled })}>
-        <Text>
-          {label}
-        </Text>
+        <Text>{label}</Text>
       </View>
     )
   }
