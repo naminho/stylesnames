@@ -1,26 +1,16 @@
 {
   "name": "stylesnames",
-  "version": "1.1.1",
   "description": "Util to conditionally apply Stylesheets for React and React-Native.",
+  "version": "1.1.1",
+  "repository": "github:tobua/stylesnames",
+  "license": "MIT",
+  "author": "Matthias Giger",
+  "scripts": {
+    "start": "padua watch",
+    "test": "padua test"
+  },
   "main": "dist/index.js",
   "source": "index.js",
-  "author": "Matthias Giger",
-  "license": "MIT",
-  "repository": "github:tobua/stylesnames",
-  "scripts": {
-    "watch": "padua watch",
-    "build": "padua build",
-    "test": "padua test",
-    "release": "padua release",
-    "update": "padua update"
-  },
-  "prettier": "padua/configuration/.prettierrc.json",
-  "eslintConfig": {
-    "extends": "./node_modules/padua/configuration/eslint.cjs"
-  },
-  "devDependencies": {
-    "padua": "0.0.1"
-  },
   "files": [
     "dist"
   ],
@@ -30,5 +20,25 @@
     "classnames",
     "react",
     "react-native"
-  ]
+  ],
+  "devDependencies": {
+    "padua": "0.1.2"
+  },
+  "prettier": "padua/configuration/.prettierrc.json",
+  "eslintConfig": {
+    "extends": "./node_modules/padua/configuration/eslint.cjs"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.jsx?$": [
+        "babel-jest",
+        {
+          "configFile": "./node_modules/padua/configuration/.babelrc"
+        }
+      ]
+    }
+  },
+  "engines": {
+    "node": ">= 13.2.0"
+  }
 }
